@@ -1,5 +1,5 @@
-from repostar import app 
+from repostar import manager
 
 
 if __name__ == '__main__':
-    app.run()
+    manager.run()
