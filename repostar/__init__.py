@@ -18,6 +18,7 @@ manager.add_command('db', MigrateCommand)
 
 login = LoginManager(app)
 login.login_view = 'login'
+login.login_message_category = 'info'
 
 from .routes import *
 from .models import *
