@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #563d7c">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fafafb">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Repo&#x2605;</a>
+    <a class="navbar-brand" href="#">REPO&#x2605;RY</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,14 +14,11 @@
         <li class="nav-item active">
           {% if current_user.is_anonymous %}
             <a class="nav-link" href="{{ url_for('login') }}">Login <span class="sr-only">(current)</span></a>
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('register') }}">Register <span class="sr-only">(current)</span></a>
-            </li>
           {% else %}
             <a class="nav-link" href="{{ url_for('logout') }}">Logout <span class="sr-only">(current)</span></a>
           {% endif %}
         </li>
-        
+
       </ul>
     </div>
   </div>

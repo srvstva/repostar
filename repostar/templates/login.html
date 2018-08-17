@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <div class="card bg-light text-dark">
-        <div class="card-header text-center"><h4>Repo&#x2605; Login</h4></div>
+    <div class="card text-dark">
         <div class="card-body">
+            <h3 class="card-title">Repo&#x2605;ry Login</h3>
             <form action="" method="POST">
                 {{ form.csrf_token }}
                 <div class="form-group">
@@ -20,6 +20,9 @@
                 </div>
                 {{form.submit(class_="btn btn-primary")}}
             </form>
+        </div>
+        <div class="card-footer">
+            <a href="{{ url_for('register') }}"class="card-link">New User?</a>
         </div>
     </div>
 {% endblock content %}
