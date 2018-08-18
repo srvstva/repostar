@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from repostar import app, db
 from .forms import LoginForm, RegistrationForm
@@ -24,7 +24,8 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember.data)
         flash(f'Signed in as {user.username}', 'info')
-        return redirect(url_for('index'))
+        return redirect(request.args.get('next')) if 'next' in request.args\
+                else redirect(url_for('index'))
     return render_template('login.html', form=form)
 
 
@@ -49,3 +50,8 @@ def register():
         return redirect(url_for('login'))
     return render_template('registration.html', form=form)
 
+
+@app.route('/account')
+@login_required
+def account():
+    return render_template('account.html', user=current_user)
